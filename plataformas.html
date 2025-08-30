@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grade Aulas 1ºC</title>
-    <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="/Style/menustyle.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="menustyle.css">
     <style>
         :root {
     --cor-principal:#0B2545;
@@ -473,38 +473,119 @@ footer{
 } */
 
         :root {
-                --cor-principal:#0B2545;
-                --cor-secundaria:#2552D9;
-                --cor-terciaria:#2980F2;
-                --cor-quaternaria:#2793F2;
-                --cor-textos:#F5F5F5;
-                --cor-fundo: #0A1A33;
-                --fonte:'Open Sans', sans-serif;
-                --fonte-2:'Montserrat', sans-serif;
-                --fonte-3:'Oswald', sans-serif;
-        }
-        h3{
-            text-align: center;
-            font-size: 32px;
-            margin: 0;
-            font-family: 'Oswald', sans-serif;
-            color: #FFD700;
-            padding: 10px 0 0 0;
-        }
-        #sublinhado-aulas {
-            width: 150px;
-            height: 2px;
-            background-color:var(--cor-textos);
-            padding: 0;
-            margin: auto;
+        --cor-principal:#0B2545;
+        --cor-secundaria:#2552D9;
+        --cor-terciaria:#2980F2;
+        --cor-quaternaria:#2793F2;
+        --cor-textos:#F5F5F5;
+        --cor-fundo: #0A1A33;
+        --fonte:'Open Sans', sans-serif;
+        --fonte-2:'Montserrat', sans-serif;
+        --fonte-3:'Oswald', sans-serif;
         }
 
-        #img-aulas{
-            padding: 150px 0 0 0;
-            width: 500px; 
-            margin: auto;       /* largura fixa */
-            overflow-x: auto;    /* ativa a barra de rolagem no eixo X */
-            white-space: nowrap;
+        #card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            top: 50%;
+            left: 50%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            /* centraliza os cards na tela */
+        }
+
+        #plataformas {
+            font-weight: bold;
+            text-align: center;  /* sempre centralizado */
+            font-size: 24px;
+            margin: 50px 0;
+            color: #FFD700;
+        }
+
+        #plataformas h2{
+            margin: 0;
+        }
+
+        #plataformas-container {
+            width: 100px;
+            height: 2px;
+            background-color: var(--cor-textos);
+            margin: 10px auto; /* centraliza os cards na tela */
+        }
+
+        .card {
+            background-color: #2c2c54;
+            color: var(--cor-textos);
+            padding: 10px 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            width: 150px;
+            display: flex;
+            flex-direction: column;  /* imagem em cima, texto embaixo */
+            align-items: center;
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+        }
+
+        .icon {
+            display: flex;
+            flex-direction: column; /* imagem em cima, texto embaixo */
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .icon img {
+            width: 60px;
+            height: auto;
+        }
+
+        #tarefa-sp {
+            font-weight: bold;
+            color: black;
+            margin-top: 5px;
+            text-align: center;
+        }
+
+        .speak img{
+            height: 400px;
+            width: auto;
+        }
+
+        .speak{
+            height: 100px;
+            margin: 10px;
+        }
+
+        .taskitos img{
+            height: 700px;
+            width: 700px;
+        }
+
+        @media (max-width: 800px) {
+            .card {
+                width: 120px;      /* menor largura */
+                height: auto;     /* altura fixa, quadrado */
+                padding: 5px;      /* menos padding */
+            }
+
+            #card-container {
+                gap: 10px;          /* menor espaçamento */
+            }
+
+            .icon img {
+                width: 50px;        /* imagem menor */
+                height: auto;
+            }
+
+            #tarefa-sp {
+                font-size: 14px;    /* texto menor */
+            }
         }
 
         footer{
@@ -513,14 +594,10 @@ footer{
             left: 0; 
         }
 
-        @media screen and (max-width: 600px) {
-            #img-aulas {
-                padding: 150px 0 0 0;
-                width: 300px; 
-                margin: auto;       /* largura fixa */
-                overflow-x: auto;    /* ativa a barra de rolagem no eixo X */
-                white-space: nowrap;
-            }
+        .icon a{
+            color: var(--cor-textos);
+            text-decoration: none;
+            font-size: 18px;
         }
     </style>
 </head>
@@ -538,16 +615,16 @@ footer{
             <div id="overlay">
                 <div id="menu-aberto" class="menu-close">
                     <ul id="text-menu">
-                        <li><a href="/index.html">🏠Home</a></li>
-                        <li><a href="Menu-Pages/aulas.html" target="_blank">📘 Grade de Aulas</a></li>
-                        <li><a href="Menu-Pages/Aniverssarios.html">🎉 Aniversários</a></li>
-                        <li><a href="Menu-Pages/plataformas.html">💻 Plataformas</a></li><!--Colocar link doritus e speakfy-->
+                        <li><a href="index.html">🏠Home</a></li>
+                        <li><a href="aulas.html">📘 Grade de Aulas</a></li>
+                        <li><a href="Aniverssarios.html">🎉 Aniversários</a></li>
+                        <li><a href="plataformas.html">💻 Plataformas</a></li><!--Colocar link doritus e speakfy-->
                     </ul>
                 </div>
             </div>
 
             <div class="logo-escola" id="logo-escola">
-                <img src="/Adobe Express - file (2).png" alt="logo-escola">
+                <img src="Adobe Express - file (2).png" alt="logo-escola">
             </div>
 
             <div class="nav-nome" id="nav-nome">
@@ -556,38 +633,84 @@ footer{
         </div>
     </header>
 
-    <main>
-        <h3>AULAS DA SEMANA</h3>
-        <div id="sublinhado-aulas"></div>
+    <div id="plataformas">
+            <h2>Plataformas</h2>
+            <div id="plataformas-container"></div>
+    </div>
 
-        <div id="img-aulas">
-            <img src="/image.png" alt="tabela-aulas">
+    <main id="card-container">
+        
+        <div class="card">
+            <div class="icon speak">
+                <img src="Adobe Express - file (4).png" alt="Tarefa SP">
+                <p class="tarefa-sp">0,0%</p>
+            </div>
+
         </div>
+
+            
+
+            <div class="card">
+                <div class="icon speak">
+                    <img src="Adobe Express - file (7).png" alt="Khan Academy">
+                    <p class="tarefa-sp">0,0%</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="icon speak">
+                    <img src="Adobe Express - file (9).png" alt="Khan Academy">
+                    <a href="https://taskitos.cupiditys.lol" target="_blank">
+                        <p class="tarefa-sp links">👆</p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="icon speak taskitos">
+                    <img src="Adobe Express - file (10).png" alt="Khan Academy">
+                    <a href="https://speakify.cupiditys.lol" target="_blank">
+                        <p class="tarefa-sp links">👆</p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="icon">
+                    <img src="Adobe Express - file (8).png" alt="Khan Academy">
+                    <p class="tarefa-sp">0,0%</p>
+                </div>
+            </div>
+
+            <div class="card">
+            <div class="icon">
+                <img src="Adobe Express - file (11).png" alt="Tarefa SP">
+                <p class="tarefa-sp">0,0%</p>
+            </div>
     </main>
 
-
     <footer>
-            <h2 id="meu-credito"><a href="https://www.instagram.com/henriquepedro_3" id="instagram-meu" target="_blank">ᴘ.ʜ 😶‍🌫️</a></h2>
+            <h3 id="meu-credito"><a href="https://www.instagram.com/henriquepedro_3" id="instagram-meu" target="_blank">ᴘ.ʜ 😶‍🌫️</a></h3>
             <div id="barra-credito"></div>
             <p>Site oficial da turma <span id="credito">1ºC |ANSELMO</span></p>
-        </footer>
+    </footer>
 </body>
 </html>
 
 <script>
-    const checkbox = document.getElementById("checkbox");
-    const menu = document.getElementById("menu-aberto");
-    const overlay = document.getElementById("overlay");
+const checkbox = document.getElementById("checkbox");
+const menu = document.getElementById("menu-aberto");
+const overlay = document.getElementById("overlay");
 
-    checkbox.addEventListener("change", () => {
-        menu.classList.toggle("show");
-        overlay.classList.toggle("show");
-    });
+checkbox.addEventListener("change", () => {
+    menu.classList.toggle("show");
+    overlay.classList.toggle("show");
+});
 
-    // fechar ao clicar no overlay
-    overlay.addEventListener("click", () => {
-        menu.classList.remove("show");
-        overlay.classList.remove("show");
-        checkbox.checked = false;
-    });
+// fechar ao clicar no overlay
+overlay.addEventListener("click", () => {
+    menu.classList.remove("show");
+    overlay.classList.remove("show");
+    checkbox.checked = false;
+});
 </script>

@@ -1,76 +1,12 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aniversários</title>
-    <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="/Style/menustyle.css">
-
+    <title>Grade Aulas 1ºC</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="menustyle.css">
     <style>
-        :root {
-                --cor-principal:#0B2545;
-                --cor-secundaria:#2552D9;
-                --cor-terciaria:#2980F2;
-                --cor-quaternaria:#2793F2;
-                --cor-textos:#F5F5F5;
-                --cor-fundo: #0A1A33;
-                --fonte:'Open Sans', sans-serif;
-                --fonte-2:'Montserrat', sans-serif;
-                --fonte-3:'Oswald', sans-serif;
-        }
-
-        h1 {
-            padding: 15px;
-            margin: 0;
-            font-size: 28px;
-            margin-bottom: 20px;
-            text-align: center;
-            color: #FFD700;
-            }
-
-        .calendar {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            }
-
-        .month {
-            background: #1e1e3f;
-            border-radius: 12px;
-            padding: 15px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            text-align: left;
-            }
-
-        .month h2 {
-            margin: 0 0 10px;
-            font-size: 20px;
-            }
-
-        .month ul {
-            list-style: none;
-            padding: 0;
-            }
-
-        .month ul li {
-            background: #2c2c54;
-            margin: 6px 0;
-            padding: 8px;
-            border-radius: 8px;
-            font-size: 14px;
-            }
-
-        footer{
-            padding: 20px 0;
-        }
-
-        @media screen and (max-width: 800px) {
-            h1{
-                font-size: 24px;
-            }
-        }
-
         :root {
     --cor-principal:#0B2545;
     --cor-secundaria:#2552D9;
@@ -481,8 +417,7 @@ footer{
         width: 50px;
     }
 }
-
-    /* From Uiverse.io by vinodjangid07 */ 
+/* From Uiverse.io by vinodjangid07 */ 
 #checkbox {
   display: none;
 }
@@ -537,7 +472,56 @@ footer{
   transform-origin:right;
 } */
 
+        :root {
+                --cor-principal:#0B2545;
+                --cor-secundaria:#2552D9;
+                --cor-terciaria:#2980F2;
+                --cor-quaternaria:#2793F2;
+                --cor-textos:#F5F5F5;
+                --cor-fundo: #0A1A33;
+                --fonte:'Open Sans', sans-serif;
+                --fonte-2:'Montserrat', sans-serif;
+                --fonte-3:'Oswald', sans-serif;
+        }
+        h3{
+            text-align: center;
+            font-size: 32px;
+            margin: 0;
+            font-family: 'Oswald', sans-serif;
+            color: #FFD700;
+            padding: 10px 0 0 0;
+        }
+        #sublinhado-aulas {
+            width: 150px;
+            height: 2px;
+            background-color:var(--cor-textos);
+            padding: 0;
+            margin: auto;
+        }
 
+        #img-aulas{
+            padding: 150px 0 0 0;
+            width: 500px; 
+            margin: auto;       /* largura fixa */
+            overflow-x: auto;    /* ativa a barra de rolagem no eixo X */
+            white-space: nowrap;
+        }
+
+        footer{
+            position: fixed;      /* fixa na tela */
+            bottom: 10px;            /* parte de baixo */
+            left: 0; 
+        }
+
+        @media screen and (max-width: 600px) {
+            #img-aulas {
+                padding: 150px 0 0 0;
+                width: 300px; 
+                margin: auto;       /* largura fixa */
+                overflow-x: auto;    /* ativa a barra de rolagem no eixo X */
+                white-space: nowrap;
+            }
+        }
     </style>
 </head>
 <body>
@@ -554,7 +538,7 @@ footer{
             <div id="overlay">
                 <div id="menu-aberto" class="menu-close">
                     <ul id="text-menu">
-                        <li><a href="/index.html">🏠Home</a></li>
+                        <li><a href="index.html">🏠Home</a></li>
                         <li><a href="aulas.html" target="_blank">📘 Grade de Aulas</a></li>
                         <li><a href="Aniverssarios.html">🎉 Aniversários</a></li>
                         <li><a href="plataformas.html">💻 Plataformas</a></li><!--Colocar link doritus e speakfy-->
@@ -563,7 +547,7 @@ footer{
             </div>
 
             <div class="logo-escola" id="logo-escola">
-                <img src="/Adobe Express - file (2).png" alt="logo-escola">
+                <img src="Adobe Express - file (2).png" alt="logo-escola">
             </div>
 
             <div class="nav-nome" id="nav-nome">
@@ -573,112 +557,17 @@ footer{
     </header>
 
     <main>
-        <h1>🎉 Calendário de Aniversários – 1ºC🎉</h1>
+        <h3>AULAS DA SEMANA</h3>
+        <div id="sublinhado-aulas"></div>
 
-        <div class="calendar">
-            <div class="month">
-            <h2>🌟 Janeiro</h2>
-            <ul>
-                <li></li>
-            </ul>
-            </div>
-
-            <div class="month">
-            <h2>💖 Fevereiro</h2>
-            <ul>
-                <li>11 - Milena</li>
-                <li>15 - Fonseca</li>
-            </ul>
-            </div>
-
-            <div class="month">
-            <h2>🌸 Março</h2>
-            <ul>
-                <li>10 - Agatha</li>
-                <li>16 - Enricote</li>
-            </ul>
-            </div>
-
-            <div class="month">
-            <h2>🌷 Abril</h2>
-            <ul>
-                <li>04 - Lazaro Barbosa</li>
-                <li></li>
-            </ul>
-            </div>
-
-            <div class="month">
-            <h2>🌺 Maio</h2>
-            <ul>
-                <li></li>
-                <li></li>
-            </ul>
-            </div>
-
-            <div class="month">
-            <h2>🌿 Junho</h2>
-            <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
-            </div>
-
-            <div class="month">
-            <h2>🌞 Julho</h2>
-            <ul>
-                <li>07 - Isabella</li>
-                <li></li>
-            </ul>
-            </div>
-
-            <div class="month">
-            <h2>🌻 Agosto</h2>
-            <ul>
-                <li></li>
-            </ul>
-            </div>
-
-            <div class="month">
-            <h2>🍂 Setembro</h2>
-            <ul>
-                <li>03 - Pedro</li>
-                <li>17 - Bruna</li>
-            </ul>
-            </div>
-
-            <div class="month">
-            <h2>🎃 Outubro</h2>
-            <ul>
-                <li>01 - Rebeca</li>
-                <li>10 - Gabriel G.</li>
-                <li></li>
-            </ul>
-            </div>
-
-            <div class="month">
-            <h2>🍁 Novembro</h2>
-            <ul>
-                <li>02 - Amanda L.</li>
-                <li>05 - Jonatas</li>
-                <li></li>
-                <li></li>
-            </ul>
-            </div>
-
-            <div class="month">
-            <h2>🎄 Dezembro</h2>
-            <ul>
-                <li>27 - Maria</li>
-                <li>28 - Ricardo</li>
-                <li></li>
-            </ul>
-            </div>
+        <div id="img-aulas">
+            <img src="image.png" alt="tabela-aulas">
         </div>
     </main>
 
+
     <footer>
-            <h3 id="meu-credito"><a href="https://www.instagram.com/henriquepedro_3" id="instagram-meu" target="_blank">ᴘ.ʜ 😶‍🌫️</a></h3>
+            <h2 id="meu-credito"><a href="https://www.instagram.com/henriquepedro_3" id="instagram-meu" target="_blank">ᴘ.ʜ 😶‍🌫️</a></h2>
             <div id="barra-credito"></div>
             <p>Site oficial da turma <span id="credito">1ºC |ANSELMO</span></p>
         </footer>
