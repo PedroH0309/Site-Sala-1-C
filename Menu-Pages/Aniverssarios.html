@@ -71,6 +71,418 @@
             }
         }
 
+        :root {
+    --cor-principal:#0B2545;
+    --cor-secundaria:#2552D9;
+    --cor-terciaria:#2980F2;
+    --cor-quaternaria:#2793F2;
+    --cor-textos:#F5F5F5;
+    --cor-fundo: #0A1A33;
+    --fonte:'Open Sans', sans-serif;
+    --fonte-2:'Montserrat', sans-serif;
+    --fonte-3:'Oswald', sans-serif;
+}
+
+body{
+    background-color: var(--cor-principal);
+    color: var(--cor-textos);
+    font-family: var(--fonte);
+    padding: 0px;
+    margin: 0px;
+    overflow-x: hidden;
+}
+
+footer p{
+    margin: 0;
+    padding: 0;
+}
+
+#nav-bar{
+    background-color: #000000b7;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 5px;
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+
+#nav-nome{
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--cor-textos);
+}
+
+.toggle {
+    margin: 0 0 0 10px;
+}
+
+@media screen and (min-width:1990px) {
+    main{
+        width: 600px;
+    }
+
+    #formulario{
+        width: 90px;
+        height: 10px;
+    }
+
+    #text-class{
+        width: 404px;
+    }
+}
+
+
+
+@media screen and (min-width: 1200px) {
+    body{
+        background-color: var(--cor-fundo);
+    }
+
+    main{
+        width: 1200px;
+        margin: auto;
+        background-color: var(--cor-principal);
+        height: 110vh;
+        box-shadow: -5px 0 10px rgba(0,0,0,0.3),  /* sombra no lado esquerdo */
+                     5px 0 10px rgba(0,0,0,0.3);
+    }
+
+    #formulario{
+        position: relative;
+        left: 24%;
+    }
+
+}
+
+#menu-close{
+    width: 100px;
+    height: 10px;
+}
+
+#menu{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  background-color: #0B2545;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+  transform: translateX(-100%);
+  transition: transform 0.4s ease;
+  z-index: 1001;
+  overflow-y: auto; /* caso tenha muitos itens */
+}
+
+.menu-close {
+    transform: translateX(100%);
+}
+
+#menu-aberto {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  background-color: #000000;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 1001; /* acima da navbar */
+}
+
+#menu-aberto.show {
+  transform: translateX(0); /* aparece deslizando */
+}
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  opacity: 0;
+  pointer-events: none; /* impede clique enquanto invisível */
+  transition: opacity 0.4s ease;
+  z-index: 1000;
+}
+
+/* overlay visível */
+#overlay.show {
+  opacity: 1;
+  pointer-events: all; /* ativa clique quando visível */
+}
+
+#nav-bar.hide {
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+#logo-escola img{
+    width: 75px;
+    height: auto;
+    margin: 0 15px 0 20px;
+}
+
+#text-menu{
+    padding:6px;
+    position: absolute;
+    top: 7%;
+    margin: 0 0 0 30px;
+}
+
+#text-menu li{
+    padding: 0 0 7px 0px;
+    list-style: none;
+    margin: 20px 0;
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+#menu-aberto.show #text-menu li {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+#menu-aberto.show #text-menu li:nth-child(1) { transition-delay: 0.1s; opacity: 1; transform: translateX(0); }
+#menu-aberto.show #text-menu li:nth-child(2) { transition-delay: 0.2s; opacity: 1; transform: translateX(0); }
+#menu-aberto.show #text-menu li:nth-child(3) { transition-delay: 0.3s; opacity: 1; transform: translateX(0); }
+#menu-aberto.show #text-menu li:nth-child(4) { transition-delay: 0.4s; opacity: 1; transform: translateX(0); }
+#menu-aberto.show #text-menu li:nth-child(5) { transition-delay: 0.5s; opacity: 1; transform: translateX(0); }
+#menu-aberto.show #text-menu li:nth-child(6) { transition-delay: 0.6s; opacity: 1; transform: translateX(0); }
+#menu-aberto.show #text-menu li:nth-child(7) { transition-delay: 0.7s; opacity: 1; transform: translateX(0); }
+#menu-aberto.show #text-menu li:nth-child(8) { transition-delay: 0.8s; opacity: 1; transform: translateX(0); }
+#menu-aberto.show #text-menu li:nth-child(9) { transition-delay: 0.8s; opacity: 1; transform: translateX(0); }
+
+
+
+.menu-close a{
+    text-decoration: none;
+    color: var(--cor-textos);
+}
+
+#text-class{
+    text-align: center;
+    color: #FFD700;
+    font-family: var(--fonte-2);
+    font-size: 42px;
+    padding: 100px;
+    border: 1px solid #e0e0e069;
+    box-shadow: inset 0 -5px 100px rgba(0, 0, 0, 0.116);
+}
+
+#sublinhado{
+    width: 90px;
+    height: 5px;
+    display: block;
+    justify-self: center;
+    background-color: white;
+}
+
+#title-about{
+    color: #E0E0E0;
+    font-family: var(--fonte-2);
+    font-size: 32px;
+    line-height: 40px;
+}
+
+#about-class{
+    margin: auto 40px;
+    line-height: 40px;
+    font-size: 20px;
+    padding: 20px;
+    color: #E0E0E0;
+}
+
+#calendario{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#atualizacao{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#apresentacao{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#avisos{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#acesso{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#sugestoes{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#formulario{
+    width: 460px;
+    height: 40px;
+    display: flex;
+    justify-content: center; /* centraliza horizontal */
+    align-items: center;
+    background-color: #E0E0E0;
+    text-decoration: none;
+    color: #0B2545;
+    margin: auto;
+    border-radius: 5px;
+    margin: 70px 0 40px 0;
+}
+
+#formulario a{
+    text-decoration: none;
+    font-size: 18px;
+    color: #0A1A33;
+}
+
+footer{
+    bottom: 0; /* fixa no rodapé */
+    left: 0;
+    width: 100%; /* ocupa toda largura */ 
+    color: white;
+    text-align: left;
+    padding: 10px 0;
+    font-family: Arial, sans-serif;
+    margin: 0 0 0 10px;
+}
+
+@media screen and (min-width: 1300px) and (max-width: 1990px) {
+    footer{
+        left: 350px;
+        text-align: left;
+    }
+
+    main{
+        height: 110vh;
+    }
+}
+
+#meu-credito{
+    margin: 0 0 7px 0;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+#meu-credito a{
+    text-decoration: none;
+    color: var(--cor-textos);
+}
+
+#barra-credito{
+    width: 100px;
+    height: 2px;
+    margin: 0 0 10px 0;
+    background-color: white;
+}
+
+#credito{
+    margin: 0 0 7px 0;
+    font-size: 14px;
+    font-weight: bolder;
+}
+
+/* Largura da barra */
+::-webkit-scrollbar {
+  width: 7px;       /* largura vertical */
+  height: 1px;       /* altura horizontal */
+}
+
+/* Fundo da barra */
+::-webkit-scrollbar-track {
+  background: #0B2545;  /* cor de fundo */
+  border-radius: 10px;
+}
+
+/* Parte que se move (scroll) */
+::-webkit-scrollbar-thumb {
+  background: #0A1A33;   /* cor do "botão" */
+  border-radius: 10px;
+}
+
+/* Quando passa o mouse em cima do scroll */
+::-webkit-scrollbar-thumb:hover {
+  background: #2552D9;
+}
+
+@media screen and (max-width: 800px) {
+    body {
+        font-size: 14px; /* diminui fonte geral */
+    }
+
+    #text-class {
+        font-size: 28px;
+        padding: 50px 20px;
+    }
+
+    #title-about {
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    #about-class {
+        font-size: 16px;
+        line-height: 28px;
+        margin: 20px;
+        padding: 10px;
+    }
+
+    #formulario {
+        width: 90%;
+        height: 35px;
+        margin: 40px auto;
+    }
+
+    #formulario a {
+        font-size: 16px;
+    }
+
+    footer {
+        font-size: 12px;
+        padding: 5px;
+        margin: 0 5px;
+    }
+
+    #meu-credito {
+        font-size: 16px;
+    }
+
+    #credito {
+        font-size: 12px;
+    }
+
+    main {
+        width: 95%;
+        margin: auto;
+        height: auto;
+    }
+
+    #nav-nome {
+        font-size: 10px;
+    }
+
+    #text-menu li {
+        font-size: 14px;
+        margin: 10px 0;
+    }
+
+    #logo-escola img {
+        width: 50px;
+    }
+}
+
+
     </style>
 </head>
 <body>
