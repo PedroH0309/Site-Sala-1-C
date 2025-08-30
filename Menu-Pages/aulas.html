@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Aulas 1ºC</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/Style/menustyle.css">
+    <style>
+        :root {
+                --cor-principal:#0B2545;
+                --cor-secundaria:#2552D9;
+                --cor-terciaria:#2980F2;
+                --cor-quaternaria:#2793F2;
+                --cor-textos:#F5F5F5;
+                --cor-fundo: #0A1A33;
+                --fonte:'Open Sans', sans-serif;
+                --fonte-2:'Montserrat', sans-serif;
+                --fonte-3:'Oswald', sans-serif;
+        }
+        h3{
+            text-align: center;
+            font-size: 32px;
+            margin: 0;
+            font-family: 'Oswald', sans-serif;
+            color: #FFD700;
+            padding: 10px 0 0 0;
+        }
+        #sublinhado-aulas {
+            width: 150px;
+            height: 2px;
+            background-color:var(--cor-textos);
+            padding: 0;
+            margin: auto;
+        }
+
+        #img-aulas{
+            padding: 150px 0 0 0;
+            width: 500px; 
+            margin: auto;       /* largura fixa */
+            overflow-x: auto;    /* ativa a barra de rolagem no eixo X */
+            white-space: nowrap;
+        }
+
+        footer{
+            position: fixed;      /* fixa na tela */
+            bottom: 10px;            /* parte de baixo */
+            left: 0; 
+        }
+
+        @media screen and (max-width: 600px) {
+            #img-aulas {
+                padding: 150px 0 0 0;
+                width: 300px; 
+                margin: auto;       /* largura fixa */
+                overflow-x: auto;    /* ativa a barra de rolagem no eixo X */
+                white-space: nowrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="nav-bar">
+            <div id="menu-toggle">
+                 <input id="checkbox" type="checkbox">
+                    <label class="toggle" for="checkbox">
+                        <div id="bar1" class="bars"></div>
+                        <div id="bar2" class="bars"></div>
+                        <div id="bar3" class="bars"></div>
+                    </label>
+            </div>
+            <div id="overlay">
+                <div id="menu-aberto" class="menu-close">
+                    <ul id="text-menu">
+                        <li><a href="/index.html">🏠Home</a></li>
+                        <li><a href="Menu-Pages/aulas.html" target="_blank">📘 Grade de Aulas</a></li>
+                        <li><a href="Menu-Pages/Aniverssarios.html">🎉 Aniversários</a></li>
+                        <li><a href="Menu-Pages/plataformas.html">💻 Plataformas</a></li><!--Colocar link doritus e speakfy-->
+                    </ul>
+                </div>
+            </div>
+
+            <div class="logo-escola" id="logo-escola">
+                <img src="/Adobe Express - file (2).png" alt="logo-escola">
+            </div>
+
+            <div class="nav-nome" id="nav-nome">
+                <h2>ANSELMO 1ºC</h2>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <h3>AULAS DA SEMANA</h3>
+        <div id="sublinhado-aulas"></div>
+
+        <div id="img-aulas">
+            <img src="/image.png" alt="tabela-aulas">
+        </div>
+    </main>
+
+
+    <footer>
+            <h2 id="meu-credito"><a href="https://www.instagram.com/henriquepedro_3" id="instagram-meu" target="_blank">ᴘ.ʜ 😶‍🌫️</a></h2>
+            <div id="barra-credito"></div>
+            <p>Site oficial da turma <span id="credito">1ºC |ANSELMO</span></p>
+        </footer>
+</body>
+</html>
+
+<script>
+    const checkbox = document.getElementById("checkbox");
+    const menu = document.getElementById("menu-aberto");
+    const overlay = document.getElementById("overlay");
+
+    checkbox.addEventListener("change", () => {
+        menu.classList.toggle("show");
+        overlay.classList.toggle("show");
+    });
+
+    // fechar ao clicar no overlay
+    overlay.addEventListener("click", () => {
+        menu.classList.remove("show");
+        overlay.classList.remove("show");
+        checkbox.checked = false;
+    });
+</script>

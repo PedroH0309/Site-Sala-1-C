@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Sala | 1C</title>
+    <link rel="stylesheet" href="Style/menustyle.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+    </style>
+</head>
+<body>
+    <header>
+        <div id="nav-bar">
+            <div id="menu-toggle">
+                 <input id="checkbox" type="checkbox">
+                    <label class="toggle" for="checkbox">
+                        <div id="bar1" class="bars"></div>
+                        <div id="bar2" class="bars"></div>
+                        <div id="bar3" class="bars"></div>
+                    </label>
+            </div>
+            <div id="overlay">
+                <div id="menu-aberto" class="menu-close">
+                    <ul id="text-menu">
+                        <li><a href="Menu-Pages/aulas.html">📘 Grade de Aulas</a></li>
+                        <li><a href="Menu-Pages/Aniverssarios.html">🎉 Aniversários</a></li>
+                        <li><a href="Menu-Pages/plataformas.html">💻 Plataformas</a></li><!--Colocar link doritus e speakfy-->
+                    </ul>
+                </div>
+            </div>
+
+            <div class="logo-escola" id="logo-escola">
+                <img src="Adobe Express - file (2).png" alt="logo-escola">
+            </div>
+
+            <div class="nav-nome" id="nav-nome">
+                <h2>ANSELMO 1ºC</h2>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div id="apresentation">
+
+            <div id="text-class">
+                <h1 class="text-classroom">1ºC<div id="sublinhado"></div></h1>
+            </div>
+            
+        </div>
+
+        <div id="about-class">
+            <h2 id="title-about">Bem-vindo ao site do 1ºC</h2>
+            <p>Este espaço foi criado para facilitar a comunicação e organização da nossa turma. Aqui você encontrará:</p>
+
+            <ul>
+                <li>📅 <span id="calendario">Calendário</span> – Fique por dentro das datas de provas, trabalhos e eventos.</li>
+                <li>
+                    🔄 <span id="atualizacao">O site será atualizado</span> – semanalmente ou sempre que houver algo novo para adicionar.
+                </li>
+                <li>💡 <span id="sugestoes">Sugestões</span> – Tem uma ideia para melhorar o site? Envie pelo formulário!</li>
+            </ul>
+
+            <div id="formulario">
+                <a href="https://forms.gle/4nRf84Wy2N5g4mne6" target="_blank">Formulário</a>
+            </div>
+        </div>
+
+        
+    </main>
+    <footer>
+            <h3 id="meu-credito"><a href="https://www.instagram.com/henriquepedro_3" id="instagram-meu" target="_blank">ᴘ.ʜ 😶‍🌫️</a></h3>
+            <div id="barra-credito"></div>
+            <p>Site oficial da turma <span id="credito">1ºC |ANSELMO</span></p>
+     </footer>
+</body>
+</html>
+
+<script>
+const checkbox = document.getElementById("checkbox");
+const menu = document.getElementById("menu-aberto");
+const overlay = document.getElementById("overlay");
+
+checkbox.addEventListener("change", () => {
+    menu.classList.toggle("show");
+    overlay.classList.toggle("show");
+});
+
+// fechar ao clicar no overlay
+overlay.addEventListener("click", () => {
+    menu.classList.remove("show");
+    overlay.classList.remove("show");
+    checkbox.checked = false;
+});
+</script>
